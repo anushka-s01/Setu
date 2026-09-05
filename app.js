@@ -1,4 +1,4 @@
-et selectedNeed = "";
+let selectedNeed = "";
 
 function selectNeed(need) {
     selectedNeed = need;
