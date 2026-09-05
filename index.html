@@ -18,19 +18,53 @@
 
     <div class="aac-grid">
         <button onclick="selectNeed('Water')">💧 Water</button>
-        <button onclick="selectNeed('Pain')">😣 Pain</button>
+        <button onclick="showPainOptions()">😣 Pain</button>
         <button onclick="selectNeed('Bathroom')">🚻 Bathroom</button>
         <button onclick="selectNeed('Rest')">😴 Rest</button>
         <button onclick="selectNeed('Help')">🆘 Help</button>
         <button onclick="selectNeed('Company')">❤️ Company</button>
     </div>
+<div id="painOptions" class="hidden">
 
+    <h2>Where does it hurt?</h2>
+
+    <button onclick="selectPainLocation('Head')">🧠 Head</button>
+    <button onclick="selectPainLocation('Stomach')">🫃 Stomach</button>
+    <button onclick="selectPainLocation('Back')">🔙 Back</button>
+    <button onclick="selectPainLocation('Leg')">🦵 Leg</button>
+
+    <div id="timeOptions" class="hidden">
+        <h2>Since when?</h2>
+
+        <button onclick="createPainMessage('now')">Now</button>
+        <button onclick="createPainMessage('since morning')">Since morning</button>
+        <button onclick="createPainMessage('since yesterday')">Since yesterday</button>
+    </div>
+
+</div>
     <h2>Your message</h2>
 
     <div id="message">
         Select what you need.
     </div>
     <script src="app.js"></script>
+    let painLocation = "";
+
+function showPainOptions() {
+    document.getElementById("painOptions").classList.remove("hidden");
+}
+
+function selectPainLocation(location) {
+    painLocation = location;
+    document.getElementById("timeOptions").classList.remove("hidden");
+}
+
+function createPainMessage(time) {
+    selectedNeed = "pain";
+
+    document.getElementById("message").innerText =
+        "I have " + painLocation.toLowerCase() + " pain " + time + ".";
+}
     <script>
 let selectedNeed = "";
 
