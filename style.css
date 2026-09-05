@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.aac-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.aac-grid button {
+    font-size: 22px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#message {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.caregiver {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+#status {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
