@@ -36,13 +36,72 @@
         <h2>What do you need?</h2>
 
         <div class="aac-grid">
-            <button onclick="selectNeed('Water')">💧<span>Water</span></button>
-            <button onclick="showPainOptions()">😣<span>Pain</span></button>
-            <button onclick="selectNeed('Bathroom')">🚻<span>Bathroom</span></button>
-            <button onclick="selectNeed('Rest')">😴<span>Rest</span></button>
-            <button onclick="selectNeed('Help')">🆘<span>Help</span></button>
-            <button onclick="selectNeed('Company')">❤️<span>Company</span></button>
-        </div>
+
+    <button class="aac-card water"
+            onclick="selectNeed('Water')"
+            aria-label="Water">
+        <div class="symbol-circle">💧</div>
+        <strong>Water</strong>
+        <small>I need water</small>
+    </button>
+
+    <button class="aac-card pain"
+            onclick="showPainOptions()"
+            aria-label="Pain">
+        <div class="symbol-circle">😣</div>
+        <strong>Pain</strong>
+        <small>Something hurts</small>
+    </button>
+
+    <button class="aac-card food"
+            onclick="selectNeed('Food')"
+            aria-label="Food">
+        <div class="symbol-circle">🍽️</div>
+        <strong>Food</strong>
+        <small>I am hungry</small>
+    </button>
+
+    <button class="aac-card bathroom"
+            onclick="selectNeed('Bathroom')"
+            aria-label="Bathroom">
+        <div class="symbol-circle">🚻</div>
+        <strong>Bathroom</strong>
+        <small>I need the bathroom</small>
+    </button>
+
+    <button class="aac-card rest"
+            onclick="selectNeed('Rest')"
+            aria-label="Rest">
+        <div class="symbol-circle">🌙</div>
+        <strong>Rest</strong>
+        <small>I need to rest</small>
+    </button>
+
+    <button class="aac-card help"
+            onclick="selectNeed('Help')"
+            aria-label="Help">
+        <div class="symbol-circle">🆘</div>
+        <strong>Help</strong>
+        <small>I need help</small>
+    </button>
+
+    <button class="aac-card company"
+            onclick="selectNeed('Company')"
+            aria-label="Company">
+        <div class="symbol-circle">❤️</div>
+        <strong>Company</strong>
+        <small>Stay with me</small>
+    </button>
+
+    <button class="aac-card comfort"
+            onclick="selectNeed('Comfort')"
+            aria-label="Comfort">
+        <div class="symbol-circle">🌡️</div>
+        <strong>Comfort</strong>
+        <small>I feel uncomfortable</small>
+    </button>
+
+</div>
 
         <div id="painOptions" class="hidden sub-card">
 
