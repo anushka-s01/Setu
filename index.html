@@ -1,148 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setu</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <body>
 
-<div class="container">
-
-    <header>
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-mark">💚</div>
         <div>
             <h1>Setu</h1>
             <p>Communication that reaches care.</p>
         </div>
-
-        <div class="profile-area">
-            <label for="profile">Patient</label>
-            <select id="profile" onchange="changeProfile()">
-                <option value="Riya">Riya</option>
-                <option value="Arun">Arun</option>
-            </select>
-        </div>
-    </header>
-
-    <div class="status-bar">
-        <span>● Offline-ready</span>
-        <span id="currentPatient">Riya</span>
     </div>
 
-    <section class="card">
+    <nav class="main-nav">
+        <button class="nav-item active">⌂ Communicate</button>
+        <button class="nav-item">◷ History</button>
+        <button class="nav-item">▥ Analytics</button>
+        <button class="nav-item">♙ Profile</button>
+    </nav>
 
-        <h2>What do you need?</h2>
+    <div class="profile-box">
+        <div class="profile-avatar">R</div>
+
+        <div class="profile-text">
+            <strong>Riya</strong>
+            <span>Patient</span>
+        </div>
+
+        <select id="profile" onchange="changeProfile()">
+            <option value="Riya">Riya</option>
+            <option value="Arun">Arun</option>
+        </select>
+    </div>
+</header>
+
+
+<main class="app-shell">
+
+    <section class="hero-section">
+
+        <div>
+            <h2>
+                Hi <span id="welcomePatient">Riya</span> 👋
+            </h2>
+
+            <p>
+                Tell us what you need. We're here to help.
+            </p>
+        </div>
+
+        <div class="hero-note">
+            A small message can make a big difference. ♡
+        </div>
+
+    </section>
+
+
+    <section class="offline-banner">
+
+        <div class="offline-left">
+            <span class="online-dot"></span>
+
+            <strong>Offline-ready</strong>
+
+            <span class="divider"></span>
+
+            <span>Your data is saved on this device</span>
+        </div>
+
+        <div class="offline-right">
+            ◉ Working offline
+        </div>
+
+    </section>
+
+
+    <section class="card need-card">
+
+        <div class="section-title-row">
+            <h2>What do you need?</h2>
+            <span>Tap a card to continue</span>
+        </div>
+
 
         <div class="aac-grid">
 
-    <button class="aac-card water"
-            onclick="selectNeed('Water')"
-            aria-label="Water">
-        <div class="symbol-circle">💧</div>
-        <strong>Water</strong>
-        <small>I need water</small>
-    </button>
+            <button class="aac-card water"
+                    onclick="selectNeed('Water')">
+                <div class="icon-bubble">💧</div>
+                <div class="aac-content">
+                    <strong>Water</strong>
+                    <small>I need water</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
 
-    <button class="aac-card pain"
-            onclick="showPainOptions()"
-            aria-label="Pain">
-        <div class="symbol-circle">😣</div>
-        <strong>Pain</strong>
-        <small>Something hurts</small>
-    </button>
 
-    <button class="aac-card food"
-            onclick="selectNeed('Food')"
-            aria-label="Food">
-        <div class="symbol-circle">🍽️</div>
-        <strong>Food</strong>
-        <small>I am hungry</small>
-    </button>
+            <button class="aac-card pain"
+                    onclick="showPainOptions()">
+                <div class="icon-bubble">😣</div>
+                <div class="aac-content">
+                    <strong>Pain</strong>
+                    <small>Something hurts</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
 
-    <button class="aac-card bathroom"
-            onclick="selectNeed('Bathroom')"
-            aria-label="Bathroom">
-        <div class="symbol-circle">🚻</div>
-        <strong>Bathroom</strong>
-        <small>I need the bathroom</small>
-    </button>
 
-    <button class="aac-card rest"
-            onclick="selectNeed('Rest')"
-            aria-label="Rest">
-        <div class="symbol-circle">🌙</div>
-        <strong>Rest</strong>
-        <small>I need to rest</small>
-    </button>
+            <button class="aac-card food"
+                    onclick="selectNeed('Food')">
+                <div class="icon-bubble">🍽️</div>
+                <div class="aac-content">
+                    <strong>Food</strong>
+                    <small>I am hungry</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
 
-    <button class="aac-card help"
-            onclick="selectNeed('Help')"
-            aria-label="Help">
-        <div class="symbol-circle">🆘</div>
-        <strong>Help</strong>
-        <small>I need help</small>
-    </button>
 
-    <button class="aac-card company"
-            onclick="selectNeed('Company')"
-            aria-label="Company">
-        <div class="symbol-circle">❤️</div>
-        <strong>Company</strong>
-        <small>Stay with me</small>
-    </button>
+            <button class="aac-card bathroom"
+                    onclick="selectNeed('Bathroom')">
+                <div class="icon-bubble">🚻</div>
+                <div class="aac-content">
+                    <strong>Bathroom</strong>
+                    <small>I need the bathroom</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
 
-    <button class="aac-card comfort"
-            onclick="selectNeed('Comfort')"
-            aria-label="Comfort">
-        <div class="symbol-circle">🌡️</div>
-        <strong>Comfort</strong>
-        <small>I feel uncomfortable</small>
-    </button>
 
-</div>
+            <button class="aac-card rest"
+                    onclick="selectNeed('Rest')">
+                <div class="icon-bubble">🌙</div>
+                <div class="aac-content">
+                    <strong>Rest</strong>
+                    <small>I need to rest</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
 
-        <div id="painOptions" class="hidden sub-card">
+
+            <button class="aac-card help"
+                    onclick="selectNeed('Help')">
+                <div class="icon-bubble">🆘</div>
+                <div class="aac-content">
+                    <strong>Help</strong>
+                    <small>I need help</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
+
+
+            <button class="aac-card company"
+                    onclick="selectNeed('Company')">
+                <div class="icon-bubble">❤️</div>
+                <div class="aac-content">
+                    <strong>Company</strong>
+                    <small>Stay with me</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
+
+
+            <button class="aac-card comfort"
+                    onclick="selectNeed('Comfort')">
+                <div class="icon-bubble">🌡️</div>
+                <div class="aac-content">
+                    <strong>Comfort</strong>
+                    <small>I feel uncomfortable</small>
+                </div>
+                <span class="arrow">›</span>
+            </button>
+
+        </div>
+
+
+        <div id="painOptions" class="hidden pain-panel">
 
             <h3>Where does it hurt?</h3>
 
             <div class="pain-location-grid">
 
-    <button onclick="selectPainLocation('Head')">
-        <span>🧠</span>
-        Head
-    </button>
+                <button onclick="selectPainLocation('Head')">
+                    <span>🧠</span>
+                    Head
+                </button>
 
-    <button onclick="selectPainLocation('Stomach')">
-        <span>🫃</span>
-        Stomach
-    </button>
+                <button onclick="selectPainLocation('Stomach')">
+                    <span>🫃</span>
+                    Stomach
+                </button>
 
-    <button onclick="selectPainLocation('Back')">
-        <span>🔙</span>
-        Back
-    </button>
+                <button onclick="selectPainLocation('Back')">
+                    <span>🔙</span>
+                    Back
+                </button>
 
-    <button onclick="selectPainLocation('Leg')">
-        <span>🦵</span>
-        Leg
-    </button>
+                <button onclick="selectPainLocation('Leg')">
+                    <span>🦵</span>
+                    Leg
+                </button>
 
-</div>
+            </div>
+
 
             <div id="timeOptions" class="hidden">
 
                 <h3>Since when?</h3>
 
-                <div class="option-grid">
-                    <button onclick="createPainMessage('now')">Now</button>
+                <div class="time-grid">
+
+                    <button onclick="createPainMessage('now')">
+                        Now
+                    </button>
+
                     <button onclick="createPainMessage('since morning')">
                         Since morning
                     </button>
+
                     <button onclick="createPainMessage('since yesterday')">
                         Since yesterday
                     </button>
+
                 </div>
 
             </div>
@@ -151,216 +227,258 @@
 
     </section>
 
-    <section class="card">
+
+    <section class="card message-card">
 
         <h2>Your message</h2>
 
-        <div id="message">
-            Select what you need.
+        <div class="message-row">
+
+            <div id="message" class="message-box">
+                Select what you need to continue...
+            </div>
+
+            <button class="next-btn" onclick="sendMessage()">
+                Send →
+            </button>
+
         </div>
 
-        <div class="action-row">
+        <div class="message-actions">
 
-            <button class="secondary" onclick="speakMessage()">
+            <button onclick="speakMessage()">
                 🔊 Speak
             </button>
 
-            <button class="primary" onclick="sendMessage()">
-                Send to caregiver
+            <button onclick="clearMessage()">
+                Clear
             </button>
 
         </div>
 
-        <p id="status"></p>
+        <p id="status" class="status-text"></p>
 
     </section>
 
-    <section id="caregiverBox" class="card caregiver hidden">
 
-        <div class="caregiver-header">
-            <div>
-                <small>CAREGIVER ALERT</small>
-                <h2 id="caregiverTitle">Riya needs assistance</h2>
-            </div>
+    <section id="caregiverBox" class="card caregiver-box hidden">
 
-            <span class="alert-dot">●</span>
-        </div>
+        <span class="eyebrow">CAREGIVER REQUEST</span>
 
-        <div class="alert-message">
-            <p id="caregiverMessage"></p>
-        </div>
+        <h2 id="caregiverTitle">
+            Riya needs assistance
+        </h2>
 
-        <button class="acknowledge" onclick="acknowledge()">
+        <p id="caregiverMessage">
+            ""
+        </p>
+
+        <button class="ack-btn" onclick="acknowledge()">
             ✓ Acknowledge
         </button>
 
     </section>
 
-    <section class="card">
 
-        <div class="section-title">
+    <section class="card">
+        <div class="section-title-row">
             <h2>Communication History</h2>
-            <button class="small-button" onclick="clearHistory()">Clear</button>
         </div>
 
         <div id="history">
-            <p class="empty">No communication recorded yet.</p>
+            <div class="empty-history">
+                No communication recorded yet.
+            </div>
         </div>
-
     </section>
 
-    <section class="card">
 
-        <h2>Communication Patterns</h2>
+    <section class="card analytics-dashboard">
 
-        <div class="pattern-card">
-            <span>😣 Pain communications today</span>
-            <strong id="painCount">0</strong>
-        </div>
-
-        <p class="disclaimer">
-            Setu reports communication patterns only. It does not diagnose medical conditions.
-        </p>
-
-    </section>
-
-    <section class="card accessibility">
-
-        <h2>Accessibility</h2>
-
-        <div class="accessibility-buttons">
-            <button onclick="increaseText()">A+</button>
-            <button onclick="decreaseText()">A−</button>
-            <button onclick="toggleContrast()">High Contrast</button>
-        </div>
-
-    </section>
-
-</div>
-<!-- ANALYTICS DASHBOARD -->
-<section class="card analytics-dashboard">
-
-    <div class="dashboard-heading">
-        <h2>Caregiver Analytics</h2>
-        <p>
-            Communication patterns and caregiver response overview.
-        </p>
-    </div>
-
-    <div class="analytics-kpis">
-
-        <div class="kpi-card">
-            <span>💬</span>
-            <div>
-                <small>Total Messages</small>
-                <strong id="analyticsTotal">0</strong>
-            </div>
-        </div>
-
-        <div class="kpi-card">
-            <span>✅</span>
-            <div>
-                <small>Acknowledged</small>
-                <strong id="analyticsAck">0</strong>
-            </div>
-        </div>
-
-        <div class="kpi-card">
-            <span>⏳</span>
-            <div>
-                <small>Pending</small>
-                <strong id="analyticsPending">0</strong>
-            </div>
-        </div>
-
-        <div class="kpi-card">
-            <span>😣</span>
-            <div>
-                <small>Pain Messages</small>
-                <strong id="analyticsPain">0</strong>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="analytics-panels">
-
-        <div class="analytics-box">
-            <h3>Communication Breakdown</h3>
-
-            <div class="breakdown-row">
-                <span>💧 Water</span>
-                <div class="bar-track">
-                    <div id="waterBar" class="bar-fill water-bar"></div>
-                </div>
-                <strong id="waterValue">0</strong>
-            </div>
-
-            <div class="breakdown-row">
-                <span>😣 Pain</span>
-                <div class="bar-track">
-                    <div id="painBar" class="bar-fill pain-bar"></div>
-                </div>
-                <strong id="painValue">0</strong>
-            </div>
-
-            <div class="breakdown-row">
-                <span>🍽️ Food</span>
-                <div class="bar-track">
-                    <div id="foodBar" class="bar-fill food-bar"></div>
-                </div>
-                <strong id="foodValue">0</strong>
-            </div>
-
-            <div class="breakdown-row">
-                <span>🚻 Bathroom</span>
-                <div class="bar-track">
-                    <div id="bathroomBar" class="bar-fill bathroom-bar"></div>
-                </div>
-                <strong id="bathroomValue">0</strong>
-            </div>
-
-            <div class="breakdown-row">
-                <span>🌙 Rest</span>
-                <div class="bar-track">
-                    <div id="restBar" class="bar-fill rest-bar"></div>
-                </div>
-                <strong id="restValue">0</strong>
-            </div>
-
-            <div class="breakdown-row">
-                <span>🆘 Help</span>
-                <div class="bar-track">
-                    <div id="helpBar" class="bar-fill help-bar"></div>
-                </div>
-                <strong id="helpValue">0</strong>
-            </div>
-
-        </div>
-
-        <div class="analytics-box">
-            <h3>Caregiver Response</h3>
-
-            <div id="responseDonut" class="response-donut">
-                <div class="donut-inner">
-                    <strong id="donutPercent">0%</strong>
-                    <span>Acknowledged</span>
-                </div>
-            </div>
-
-            <p id="analyticsSummary">
-                No communication patterns recorded yet.
+        <div class="dashboard-heading">
+            <span class="eyebrow">CAREGIVER ANALYTICS</span>
+            <h2>Communication Dashboard</h2>
+            <p>
+                Communication patterns and caregiver response overview.
             </p>
         </div>
 
+
+        <div class="analytics-kpis">
+
+            <div class="kpi-card">
+                <span>💬</span>
+                <div>
+                    <small>Total Messages</small>
+                    <strong id="analyticsTotal">0</strong>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <span>✅</span>
+                <div>
+                    <small>Acknowledged</small>
+                    <strong id="analyticsAck">0</strong>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <span>⏳</span>
+                <div>
+                    <small>Pending</small>
+                    <strong id="analyticsPending">0</strong>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <span>😣</span>
+                <div>
+                    <small>Pain Messages</small>
+                    <strong id="analyticsPain">0</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="analytics-panels">
+
+            <div class="analytics-box">
+
+                <h3>Communication Breakdown</h3>
+
+                <div class="breakdown-row">
+                    <span>💧 Water</span>
+
+                    <div class="bar-track">
+                        <div id="waterBar"
+                             class="bar-fill water-bar">
+                        </div>
+                    </div>
+
+                    <strong id="waterValue">0</strong>
+                </div>
+
+
+                <div class="breakdown-row">
+                    <span>😣 Pain</span>
+
+                    <div class="bar-track">
+                        <div id="painBar"
+                             class="bar-fill pain-bar">
+                        </div>
+                    </div>
+
+                    <strong id="painValue">0</strong>
+                </div>
+
+
+                <div class="breakdown-row">
+                    <span>🍽️ Food</span>
+
+                    <div class="bar-track">
+                        <div id="foodBar"
+                             class="bar-fill food-bar">
+                        </div>
+                    </div>
+
+                    <strong id="foodValue">0</strong>
+                </div>
+
+
+                <div class="breakdown-row">
+                    <span>🚻 Bathroom</span>
+
+                    <div class="bar-track">
+                        <div id="bathroomBar"
+                             class="bar-fill bathroom-bar">
+                        </div>
+                    </div>
+
+                    <strong id="bathroomValue">0</strong>
+                </div>
+
+
+                <div class="breakdown-row">
+                    <span>🌙 Rest</span>
+
+                    <div class="bar-track">
+                        <div id="restBar"
+                             class="bar-fill rest-bar">
+                        </div>
+                    </div>
+
+                    <strong id="restValue">0</strong>
+                </div>
+
+
+                <div class="breakdown-row">
+                    <span>🆘 Help</span>
+
+                    <div class="bar-track">
+                        <div id="helpBar"
+                             class="bar-fill help-bar">
+                        </div>
+                    </div>
+
+                    <strong id="helpValue">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="analytics-box">
+
+                <h3>Caregiver Response</h3>
+
+                <div id="responseDonut"
+                     class="response-donut">
+
+                    <div class="donut-inner">
+
+                        <strong id="donutPercent">
+                            0%
+                        </strong>
+
+                        <span>
+                            Acknowledged
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p id="analyticsSummary">
+                    No communication patterns recorded yet.
+                </p>
+
+            </div>
+
+        </div>
+
+        <p class="disclaimer">
+            Setu summarizes communication activity only.
+            It does not diagnose medical conditions.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div>
+        💚 Setu
     </div>
 
-    <p class="disclaimer">
-        Setu summarizes communication activity only.
-        It does not diagnose medical conditions.
-    </p>
+    <div>
+        Accessible • Private • Human-centred
+    </div>
 
-</section>
+</footer>
+
+
 <script src="app.js"></script>
 
 </body>
