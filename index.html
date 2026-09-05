@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Setu</h1>
+    <p>Communication that reaches care.</p>
+
+    <h2>What do you need?</h2>
+
+    <div class="aac-grid">
+        <button onclick="selectNeed('Water')">💧 Water</button>
+        <button onclick="selectNeed('Pain')">😣 Pain</button>
+        <button onclick="selectNeed('Bathroom')">🚻 Bathroom</button>
+        <button onclick="selectNeed('Rest')">😴 Rest</button>
+        <button onclick="selectNeed('Help')">🆘 Help</button>
+        <button onclick="selectNeed('Company')">❤️ Company</button>
+    </div>
+
+    <h2>Your message</h2>
+
+    <div id="message">
+        Select what you need.
+    </div>
+
+    <button onclick="sendMessage()">
+        Send to caregiver
+    </button>
+
+    <div id="caregiverBox" class="hidden">
+        <h2>Caregiver Alert</h2>
+        <p id="caregiverMessage"></p>
+
+        <button onclick="acknowledge()">
+            ✓ Acknowledge
+        </button>
+    </div>
+
+    <p id="status"></p>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
