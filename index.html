@@ -11,107 +11,154 @@
 
 <div class="container">
 
-    <h1>Setu</h1>
-    <p>Communication that reaches care.</p>
+    <header>
+        <div>
+            <h1>Setu</h1>
+            <p>Communication that reaches care.</p>
+        </div>
 
-    <h2>What do you need?</h2>
+        <div class="profile-area">
+            <label for="profile">Patient</label>
+            <select id="profile" onchange="changeProfile()">
+                <option value="Riya">Riya</option>
+                <option value="Arun">Arun</option>
+            </select>
+        </div>
+    </header>
 
-    <div class="aac-grid">
-        <button onclick="selectNeed('Water')">💧 Water</button>
-        <button onclick="showPainOptions()">😣 Pain</button>
-        <button onclick="selectNeed('Bathroom')">🚻 Bathroom</button>
-        <button onclick="selectNeed('Rest')">😴 Rest</button>
-        <button onclick="selectNeed('Help')">🆘 Help</button>
-        <button onclick="selectNeed('Company')">❤️ Company</button>
-    </div>
-<div id="painOptions" class="hidden">
-
-    <h2>Where does it hurt?</h2>
-
-    <button onclick="selectPainLocation('Head')">🧠 Head</button>
-    <button onclick="selectPainLocation('Stomach')">🫃 Stomach</button>
-    <button onclick="selectPainLocation('Back')">🔙 Back</button>
-    <button onclick="selectPainLocation('Leg')">🦵 Leg</button>
-
-    <div id="timeOptions" class="hidden">
-        <h2>Since when?</h2>
-
-        <button onclick="createPainMessage('now')">Now</button>
-        <button onclick="createPainMessage('since morning')">Since morning</button>
-        <button onclick="createPainMessage('since yesterday')">Since yesterday</button>
+    <div class="status-bar">
+        <span>● Offline-ready</span>
+        <span id="currentPatient">Riya</span>
     </div>
 
-</div>
-    <h2>Your message</h2>
+    <section class="card">
 
-    <div id="message">
-        Select what you need.
-    </div>
-    <script src="app.js"></script>
-    let painLocation = "";
+        <h2>What do you need?</h2>
 
-function showPainOptions() {
-    document.getElementById("painOptions").classList.remove("hidden");
-}
+        <div class="aac-grid">
+            <button onclick="selectNeed('Water')">💧<span>Water</span></button>
+            <button onclick="showPainOptions()">😣<span>Pain</span></button>
+            <button onclick="selectNeed('Bathroom')">🚻<span>Bathroom</span></button>
+            <button onclick="selectNeed('Rest')">😴<span>Rest</span></button>
+            <button onclick="selectNeed('Help')">🆘<span>Help</span></button>
+            <button onclick="selectNeed('Company')">❤️<span>Company</span></button>
+        </div>
 
-function selectPainLocation(location) {
-    painLocation = location;
-    document.getElementById("timeOptions").classList.remove("hidden");
-}
+        <div id="painOptions" class="hidden sub-card">
 
-function createPainMessage(time) {
-    selectedNeed = "pain";
+            <h3>Where does it hurt?</h3>
 
-    document.getElementById("message").innerText =
-        "I have " + painLocation.toLowerCase() + " pain " + time + ".";
-}
-    <script>
-let selectedNeed = "";
+            <div class="option-grid">
+                <button onclick="selectPainLocation('Head')">Head</button>
+                <button onclick="selectPainLocation('Stomach')">Stomach</button>
+                <button onclick="selectPainLocation('Back')">Back</button>
+                <button onclick="selectPainLocation('Leg')">Leg</button>
+            </div>
 
-function selectNeed(need) {
-    selectedNeed = need;
+            <div id="timeOptions" class="hidden">
 
-    document.getElementById("message").innerText =
-        "I need " + need.toLowerCase() + ".";
-}
+                <h3>Since when?</h3>
 
-function sendMessage() {
-    if (selectedNeed === "") {
-        alert("Please select what you need.");
-        return;
-    }
+                <div class="option-grid">
+                    <button onclick="createPainMessage('now')">Now</button>
+                    <button onclick="createPainMessage('since morning')">
+                        Since morning
+                    </button>
+                    <button onclick="createPainMessage('since yesterday')">
+                        Since yesterday
+                    </button>
+                </div>
 
-    document.getElementById("caregiverBox").classList.remove("hidden");
+            </div>
 
-    document.getElementById("caregiverMessage").innerText =
-        "Riya says: I need " + selectedNeed.toLowerCase() + ".";
+        </div>
 
-    document.getElementById("status").innerText =
-        "Message sent — waiting for acknowledgement.";
-}
+    </section>
 
-function acknowledge() {
-    document.getElementById("status").innerText =
-        "✓ Caregiver acknowledged your message.";
-}
-</script>
-</body>
-</html>
+    <section class="card">
 
-    <button onclick="sendMessage()">
-        Send to caregiver
-    </button>
+        <h2>Your message</h2>
 
-    <div id="caregiverBox" class="hidden">
-        <h2>Caregiver Alert</h2>
-        <p id="caregiverMessage"></p>
+        <div id="message">
+            Select what you need.
+        </div>
 
-        <button onclick="acknowledge()">
+        <div class="action-row">
+
+            <button class="secondary" onclick="speakMessage()">
+                🔊 Speak
+            </button>
+
+            <button class="primary" onclick="sendMessage()">
+                Send to caregiver
+            </button>
+
+        </div>
+
+        <p id="status"></p>
+
+    </section>
+
+    <section id="caregiverBox" class="card caregiver hidden">
+
+        <div class="caregiver-header">
+            <div>
+                <small>CAREGIVER ALERT</small>
+                <h2 id="caregiverTitle">Riya needs assistance</h2>
+            </div>
+
+            <span class="alert-dot">●</span>
+        </div>
+
+        <div class="alert-message">
+            <p id="caregiverMessage"></p>
+        </div>
+
+        <button class="acknowledge" onclick="acknowledge()">
             ✓ Acknowledge
         </button>
-    </div>
 
-    <p id="status"></p>
+    </section>
+
+    <section class="card">
+
+        <div class="section-title">
+            <h2>Communication History</h2>
+            <button class="small-button" onclick="clearHistory()">Clear</button>
+        </div>
+
+        <div id="history">
+            <p class="empty">No communication recorded yet.</p>
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Communication Patterns</h2>
+
+        <div class="pattern-card">
+            <span>😣 Pain communications today</span>
+            <strong id="painCount">0</strong>
+        </div>
+
+        <p class="disclaimer">
+            Setu reports communication patterns only. It does not diagnose medical conditions.
+        </p>
+
+    </section>
+
+    <section class="card accessibility">
+
+        <h2>Accessibility</h2>
+
+        <div class="accessibility-buttons">
+            <button onclick="increaseText()">A+</button>
+            <button onclick="decreaseText()">A−</button>
+            <button onclick="toggleContrast()">High Contrast</button>
+        </div>
+
+    </section>
 
 </div>
 
