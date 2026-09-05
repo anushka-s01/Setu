@@ -237,7 +237,130 @@
     </section>
 
 </div>
+<!-- ANALYTICS DASHBOARD -->
+<section class="card analytics-dashboard">
 
+    <div class="dashboard-heading">
+        <h2>Caregiver Analytics</h2>
+        <p>
+            Communication patterns and caregiver response overview.
+        </p>
+    </div>
+
+    <div class="analytics-kpis">
+
+        <div class="kpi-card">
+            <span>💬</span>
+            <div>
+                <small>Total Messages</small>
+                <strong id="analyticsTotal">0</strong>
+            </div>
+        </div>
+
+        <div class="kpi-card">
+            <span>✅</span>
+            <div>
+                <small>Acknowledged</small>
+                <strong id="analyticsAck">0</strong>
+            </div>
+        </div>
+
+        <div class="kpi-card">
+            <span>⏳</span>
+            <div>
+                <small>Pending</small>
+                <strong id="analyticsPending">0</strong>
+            </div>
+        </div>
+
+        <div class="kpi-card">
+            <span>😣</span>
+            <div>
+                <small>Pain Messages</small>
+                <strong id="analyticsPain">0</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="analytics-panels">
+
+        <div class="analytics-box">
+            <h3>Communication Breakdown</h3>
+
+            <div class="breakdown-row">
+                <span>💧 Water</span>
+                <div class="bar-track">
+                    <div id="waterBar" class="bar-fill water-bar"></div>
+                </div>
+                <strong id="waterValue">0</strong>
+            </div>
+
+            <div class="breakdown-row">
+                <span>😣 Pain</span>
+                <div class="bar-track">
+                    <div id="painBar" class="bar-fill pain-bar"></div>
+                </div>
+                <strong id="painValue">0</strong>
+            </div>
+
+            <div class="breakdown-row">
+                <span>🍽️ Food</span>
+                <div class="bar-track">
+                    <div id="foodBar" class="bar-fill food-bar"></div>
+                </div>
+                <strong id="foodValue">0</strong>
+            </div>
+
+            <div class="breakdown-row">
+                <span>🚻 Bathroom</span>
+                <div class="bar-track">
+                    <div id="bathroomBar" class="bar-fill bathroom-bar"></div>
+                </div>
+                <strong id="bathroomValue">0</strong>
+            </div>
+
+            <div class="breakdown-row">
+                <span>🌙 Rest</span>
+                <div class="bar-track">
+                    <div id="restBar" class="bar-fill rest-bar"></div>
+                </div>
+                <strong id="restValue">0</strong>
+            </div>
+
+            <div class="breakdown-row">
+                <span>🆘 Help</span>
+                <div class="bar-track">
+                    <div id="helpBar" class="bar-fill help-bar"></div>
+                </div>
+                <strong id="helpValue">0</strong>
+            </div>
+
+        </div>
+
+        <div class="analytics-box">
+            <h3>Caregiver Response</h3>
+
+            <div id="responseDonut" class="response-donut">
+                <div class="donut-inner">
+                    <strong id="donutPercent">0%</strong>
+                    <span>Acknowledged</span>
+                </div>
+            </div>
+
+            <p id="analyticsSummary">
+                No communication patterns recorded yet.
+            </p>
+        </div>
+
+    </div>
+
+    <p class="disclaimer">
+        Setu summarizes communication activity only.
+        It does not diagnose medical conditions.
+    </p>
+
+</section>
 <script src="app.js"></script>
 
 </body>
