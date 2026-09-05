@@ -6,13 +6,77 @@ let historyItems = [];
 let textScale = 1;
 
 function selectNeed(need) {
+
     selectedNeed = need;
 
-    document.getElementById("painOptions").classList.add("hidden");
+    document
+        .getElementById("painOptions")
+        .classList.add("hidden");
 
-    currentMessage = "I need " + need.toLowerCase() + ".";
 
-    document.getElementById("message").innerText = currentMessage;
+    const messages = {
+
+        Water: "I need water.",
+
+        Food: "I am hungry.",
+
+        Bathroom: "I need the bathroom.",
+
+        Rest: "I need to rest.",
+
+        Help: "I need help.",
+
+        Company: "Please stay with me.",
+
+        Comfort: "I feel uncomfortable."
+
+    };
+
+
+    currentMessage =
+        messages[need] ||
+        "I need " + need.toLowerCase() + ".";
+
+
+    document.getElementById("message")
+        .innerText = currentMessage;
+
+
+    highlightSelectedCategory();
+
+}
+function highlightSelectedCategory() {
+
+    document
+        .querySelectorAll(".aac-card")
+        .forEach(card => {
+
+            card.classList.remove("selected-card");
+
+        });
+
+
+    const cards =
+        document.querySelectorAll(".aac-card");
+
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (
+            selectedNeed &&
+            text.includes(
+                selectedNeed.toLowerCase()
+            )
+        ) {
+
+            card.classList.add("selected-card");
+
+        }
+
+    });
 }
 
 function showPainOptions() {
