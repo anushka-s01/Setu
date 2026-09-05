@@ -735,3 +735,187 @@ header {
         0 0 0 4px rgba(255,255,255,0.9),
         0 10px 25px rgba(20,50,70,0.20);
 }
+/* ===============================
+   SETU ANALYTICS DASHBOARD
+================================ */
+
+.analytics-dashboard {
+    margin-top: 24px;
+}
+
+.dashboard-heading {
+    margin-bottom: 20px;
+}
+
+.dashboard-heading h2 {
+    margin-bottom: 6px;
+}
+
+.dashboard-heading p {
+    color: #6f7f88;
+    margin: 0;
+}
+
+.analytics-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 6px 18px rgba(30, 60, 80, 0.08);
+}
+
+.kpi-card > span {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #f1f5f7;
+    font-size: 22px;
+}
+
+.kpi-card small {
+    display: block;
+    color: #7c8b94;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.kpi-card strong {
+    font-size: 28px;
+}
+
+.analytics-panels {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 18px;
+}
+
+.analytics-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(30, 60, 80, 0.08);
+}
+
+.analytics-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.breakdown-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 30px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bar-track {
+    width: 100%;
+    height: 12px;
+    background: #edf2f5;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.water-bar {
+    background: #55b8e8;
+}
+
+.pain-bar {
+    background: #ec6a77;
+}
+
+.food-bar {
+    background: #73c983;
+}
+
+.bathroom-bar {
+    background: #9b83db;
+}
+
+.rest-bar {
+    background: #819bd7;
+}
+
+.help-bar {
+    background: #efa547;
+}
+
+.response-donut {
+    width: 180px;
+    height: 180px;
+    margin: 10px auto 20px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #65b88a 0deg,
+        #65b88a 0deg,
+        #edf1f3 0deg,
+        #edf1f3 360deg
+    );
+    display: grid;
+    place-items: center;
+}
+
+.donut-inner {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.donut-inner strong {
+    font-size: 28px;
+}
+
+.donut-inner span {
+    font-size: 11px;
+    color: #74848d;
+}
+
+#analyticsSummary {
+    text-align: center;
+    color: #667881;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .analytics-kpis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .analytics-panels {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .analytics-kpis {
+        grid-template-columns: 1fr;
+    }
+
+    .breakdown-row {
+        grid-template-columns: 95px 1fr 25px;
+    }
+}
