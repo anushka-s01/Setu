@@ -13,37 +13,24 @@ function selectNeed(need) {
         .getElementById("painOptions")
         .classList.add("hidden");
 
-
     const messages = {
-
         Water: "I need water.",
-
         Food: "I am hungry.",
-
         Bathroom: "I need the bathroom.",
-
         Rest: "I need to rest.",
-
         Help: "I need help.",
-
         Company: "Please stay with me.",
-
         Comfort: "I feel uncomfortable."
-
     };
-
 
     currentMessage =
         messages[need] ||
         "I need " + need.toLowerCase() + ".";
 
-
-    document.getElementById("message")
-        .innerText = currentMessage;
-
-
-    highlightSelectedCategory();
-
+    document
+        .getElementById("message")
+        .innerText =
+        currentMessage;
 }
 function highlightSelectedCategory() {
 
