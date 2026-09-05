@@ -413,3 +413,105 @@ header {
         text-align: left;
     }
 }
+/* ---------- Colourful AAC Buttons ---------- */
+
+.aac-grid button {
+    border: none;
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                filter 0.15s ease;
+}
+
+/* Water */
+.aac-grid button:nth-child(1) {
+    background: #dff3ff;
+    color: #125b7a;
+}
+
+/* Pain */
+.aac-grid button:nth-child(2) {
+    background: #ffe4e6;
+    color: #9b3340;
+}
+
+/* Bathroom */
+.aac-grid button:nth-child(3) {
+    background: #e8e5ff;
+    color: #51468c;
+}
+
+/* Rest */
+.aac-grid button:nth-child(4) {
+    background: #e4edff;
+    color: #355b91;
+}
+
+/* Help */
+.aac-grid button:nth-child(5) {
+    background: #fff0d5;
+    color: #8a5817;
+}
+
+/* Company */
+.aac-grid button:nth-child(6) {
+    background: #ffe4f1;
+    color: #8d3d65;
+}
+
+.aac-grid button:hover {
+    transform: translateY(-3px);
+    filter: brightness(0.98);
+    box-shadow: 0 9px 20px rgba(30, 60, 80, 0.14);
+}
+
+.aac-grid button:active {
+    transform: scale(0.97);
+}
+
+/* Larger emoji */
+.aac-grid button {
+    font-size: 32px;
+}
+
+.aac-grid button span {
+    font-size: 18px;
+    margin-top: 9px;
+    font-weight: 700;
+}
+/* Pain location options */
+
+#painOptions .option-grid button {
+    background: #fff1f2;
+    color: #8f3742;
+    border: 2px solid #ffd5d9;
+}
+
+/* Time options */
+
+#timeOptions .option-grid button {
+    background: #fff7df;
+    color: #75551b;
+    border: 2px solid #f5df9e;
+}
+* Speak */
+
+.secondary {
+    background: #e5f3ff;
+    color: #175d86;
+    border: 2px solid #c5e3f5;
+}
+
+/* Send to caregiver */
+
+.primary {
+    background: #246783;
+    color: white;
+    box-shadow: 0 6px 16px rgba(36, 103, 131, 0.25);
+}
+
+/* Acknowledge */
+
+.acknowledge {
+    background: #daf3e5;
+    color: #1e6743;
+}
